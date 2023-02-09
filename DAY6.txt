@@ -1,0 +1,78 @@
+=========================================================================================================                                         
+						DAY6
+========================================================================================================
+1.https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+       this.title = title;
+       this.studio = studio;
+       this.rating = rating;
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+
+const casionRoyaleMovie = new Movie('Casino Royale', 'Eon Productions', 'PG13');
+const leo = new Movie('Leo', 'LCU', 'PG');
+const vikram = new Movie('Vikram', 'Vijay', 'PG');
+const avatar = new Movie('Avatar: The water way', 'EROS', 'PG13');
+const avengers = new Movie('The avengers: End Game', 'LCU', 'PG');
+ 
+const moviesArray = [casionRoyaleMovie, leo, vikram, avatar, avengers];
+ 
+console.log(casionRoyaleMovie.getPG(moviesArray, 'R'));
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG'));
+
+===================================================================================================
+3.Write a “person” class to hold all the details.
+
+
+class Person {
+  constructor(firstName, lastName, number, age, email) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.number=number;
+    this.age = age;
+    this.email = email;
+  }
+  
+  Name() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  
+  Age(Age) {
+    this.age = Age;
+  }
+}
+let person = new Person("jag", "M",9443537272, 24, "jag@gmail.com");
+console.log(person.Name()); 
+console.log()
+console.log(person.age); 
+console.log(person.number);
+console.log(person.email);
+
+==========================================================================================================
+4.write a class to calculate the uber price.
+
+class Uber {
+  constructor(baseamount, Rate, distance, tollfee) {
+    this.baseamount = baseamount;
+    this.Rate = Rate;
+    this.distance = distance;
+    this.tollfee = tollfee;
+  }
+  
+  calculatePrice(time, km) {
+    let price = this.baseamount + this.Rate * time + this.distance * km;
+    return price + this.tollfee;
+  }
+}
+let standardUber = new Uber(10, 2, 5, 20);
+let price = standardUber.calculatePrice(45, 17);
+console.log(price); 
+
+================================================================================================
